@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DataManager | <%= title %></title>
+
+        <link rel="stylesheet" href="stylesheets/panel3.css" type="text/css" />
+        <link rel="stylesheet" href="stylesheets/stylestrap.css" type="text/css" />
+
+        <script src="https://use.fontawesome.com/79e5e5132f.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="contentcontainer">
+            <div class="contenttitle">
+                <p><%= title %></p>
+
+                <div class="buttonarea">
+                    <input type="button" style="float: right;" class="btn btn-danger" value="Runs on Custom Software" onclick=" window.location.href = 'http://hiett.digital'; ">
+                    <div class="contentspacer"></div>
+                </div>
+            </div>
+            <div class="leftbar">
+                <div class="leftbaritem">
+                    <center>
+                        <i class="licon fa fa-home fa-2x"></i>
+                    </center>
+                </div>
+            </div>
+            <div class="leftsubbar">
+                <div class="leftsubbaritem">
+                    <p>
+                        <i class="fa fa-home fa-fw"></i>
+                        Test
+                    </p>
+            </div>
+            <div class="hiettdigitalitem">
+                <p>&copy;<a href="http://hiett.digital">Hiett.Digital</a> 2017-2018</p>
+            </div>
+            </div>
+            <div class="pagecontainer">
+                <div class="subpagecontainer">
+                    <%- body %>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
