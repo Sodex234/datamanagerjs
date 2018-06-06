@@ -1,9 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
+var pageData = null;
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render("index", {
+      title: "Home",
+      pageData: pageData
+  });
 });
 
-module.exports = router;
+function setPageData(_pageData) {
+    pageData = _pageData;
+}
+
+module.exports.router = router;
+module.exports.setPageData = setPageData;

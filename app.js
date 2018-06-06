@@ -3,7 +3,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const expressLayouts = require("express-ejs-layouts");
+const expressLayouts = require('express-ejs-layouts');
+const pageIndex = require('./pageinfo');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -21,7 +22,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+var pageData = pageIndex.loadPanelInfo();
+
+indexRouter.setPageData(pageData);
+
+app.use('/', indexRouter.router);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
