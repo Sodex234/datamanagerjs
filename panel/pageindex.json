@@ -1,7 +1,9 @@
 {
   "panelbuttons": {
     "home": {
-
+      "name": "Home",
+      "icon": "home",
+      "pagelink": "home"
     },
     "scanners": {
 
